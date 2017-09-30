@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->name('card')->get('/card/{card}', 'CardController@show');
+
+Route::get('/leaderboard', 'CardController@leaderBoard');
